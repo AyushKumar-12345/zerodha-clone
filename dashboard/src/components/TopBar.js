@@ -19,7 +19,7 @@ const TopBar = () => {
   useEffect(() => {
     const fetchOrderCount = async () => {
       try {
-        const response = await axios.get(`https://://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
+        const response = await axios.get(`https://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
         setOrderCount(response.data ? response.data.length : 0);
       } catch (error) {
         console.error("Counter data fetching warning:", error);

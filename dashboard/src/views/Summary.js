@@ -17,7 +17,7 @@ const Summary = () => {
 
     const fetchSummaryData = async () => {
       try {
-        const response = await axios.get(`https://://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
+        const response = await axios.get(`https://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
         setDbOrders(response.data || []);
       } catch (err) {
         console.error("Dashboard overview data stream sync error:", err);

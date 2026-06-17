@@ -13,7 +13,7 @@ const Holdings = () => {
   useEffect(() => {
     const fetchPortfolioData = async () => {
       try {
-        const response = await axios.get(`https://://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
+        const response = await axios.get(`https://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
         setDbOrders(response.data || []);
       } catch (error) {
         console.error("Error loading portfolio metrics:", error);

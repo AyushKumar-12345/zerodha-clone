@@ -52,7 +52,7 @@ const OrderActionWindow = ({ uid, mode = "BUY" }) => {
 
     try {
       // Post clean payload directly to the transaction backend database including user identifier parameter
-      await axios.post("https://://zerodha-clone-tbrh.onrender.com/newOrder", {
+      await axios.post("https://zerodha-clone-tbrh.onrender.com/newOrder", {
         user: activeUser, 
         name: uid,
         qty: finalQty,
