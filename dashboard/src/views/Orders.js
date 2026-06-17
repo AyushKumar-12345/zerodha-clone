@@ -12,7 +12,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`http://https://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
+        const response = await axios.get(`https://://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
         setOrders(response.data || []);
       } catch (error) {
         console.error("Failed to load database logs:", error);

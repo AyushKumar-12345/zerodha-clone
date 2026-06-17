@@ -30,7 +30,7 @@ export const GeneralContextProvider = ({ children }) => {
 
     try {
       // 1. Fetch all orders tied to this authenticated profile handle
-      const response = await axios.get(`http://https://zerodha-clone-tbrh.onrender.com/allOrders?user=${username}`);
+      const response = await axios.get(`https://://zerodha-clone-tbrh.onrender.com/allOrders?user=${username}`);
       const orders = response.data || [];
 
       // 2. Map through ledger mutations to get exact spent capital
