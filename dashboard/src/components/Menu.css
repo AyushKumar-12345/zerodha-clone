@@ -1,0 +1,172 @@
+/* ==========================================================================
+   GLOBAL NAVBAR CONTAINER (Fixes the Squished Layout Bug)
+   ========================================================================== */
+.global-header-menu {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center; /* Vertically centers logo, links, and profile exactly */
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* --- Left Side: Logo Box --- */
+.global-header-menu .logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.global-header-menu .brand-logo {
+  height: 18px; /* Clean, standard proportions for the Kite identity icon */
+  display: block;
+  object-fit: contain;
+}
+
+/* --- Right Side: Consolidated Actions --- */
+.global-header-menu .nav-right-side {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ==========================================================================
+   NAVIGATION LINKS (Namespaced to isolate from global Bootstrap styles)
+   ========================================================================== */
+.global-header-menu .nav-links-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  gap: 32px; /* Uniform structural spacing between text links */
+}
+
+.global-header-menu .nav-links-list li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+/* Core anchor formatting under local scope */
+.global-header-menu .nav-link {
+  text-decoration: none;
+  color: #666;
+  font-size: 13px;
+  font-weight: 400;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+  cursor: pointer;
+  background: transparent;
+  padding: 0; /* Reset any native framework line-height constraints */
+}
+
+/* Muted hover indicator tracking */
+.global-header-menu .nav-link:hover {
+  color: #e05320; /* Zerodha's distinct signature orange shade */
+}
+
+/* Active Link State with bottom indicator notch line */
+.global-header-menu .nav-link.active {
+  color: #e05320;
+  font-weight: 500;
+}
+
+/* Minimalist border indicator under the chosen route link */
+.global-header-menu .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e05320;
+}
+
+/* --- Navigation Split Separator Line --- */
+.global-header-menu .nav-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #eee;
+  margin: 0 24px;
+}
+
+/* ==========================================================================
+   USER PROFILE TRIGGER & ACCURATE INTERACTION STATES
+   ========================================================================== */
+.global-header-menu .profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.global-header-menu .avatar-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fcdfef; /* Distinct pink tone */
+  color: #ea56b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.global-header-menu .user-id-label {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.global-header-menu .profile-trigger:hover .user-id-label {
+  color: #e05320;
+}
+
+/* --- Floating Meta Options Menu --- */
+.global-header-menu .profile-dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 160px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  z-index: 200;
+}
+
+.global-header-menu .dropdown-item {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #555;
+  transition: all 0.1s ease;
+}
+
+.global-header-menu .dropdown-item:hover {
+  background-color: #fbfbfb;
+  color: #e05320;
+}
+
+.global-header-menu .dropdown-item.logout {
+  border-top: 1px solid #f5f5f5;
+  color: #ff5722;
+  margin-top: 4px;
+}
+
+.global-header-menu .dropdown-item.logout:hover {
+  background-color: #fff5f2;
+}

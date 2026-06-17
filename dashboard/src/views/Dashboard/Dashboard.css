@@ -1,0 +1,41 @@
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  flex: 1; 
+  width: 100%;
+  height: calc(100vh - 60px); /* Exactly accounts for the top navigation menu header height */
+  overflow: hidden;
+}
+
+.sidebar-pane {
+  width: 350px;
+  min-width: 350px; 
+  border-right: 1px solid #eeeeee;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.content-pane {
+  flex: 1; 
+  height: 100%; 
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Constrains internal lists/tables from bleeding past screen edges on ultra-wide desktop monitors */
+.inner-view-limiter {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}

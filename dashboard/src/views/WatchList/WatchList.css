@@ -1,0 +1,137 @@
+.watchlist-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.search-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f9f9f9;
+  box-sizing: border-box;
+  height: 50px;
+  min-height: 50px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #444444;
+  background: transparent;
+  width: 75%;
+}
+
+.stock-counter {
+  font-size: 11px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.watchlist-items-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.watchlist-li-item {
+  height: 50px;
+  min-height: 50px;
+  border-bottom: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.watchlist-li-item:hover {
+  background-color: #fbfbfb;
+}
+
+.stock-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.stock-ticker-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.market-pricing-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.percent-delta {
+  font-size: 11px;
+}
+
+.live-spot-price {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444444;
+  margin-left: 4px;
+  min-width: 65px;
+  text-align: right;
+}
+
+.action-buttons-overlay {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
+  background-color: #fbfbfb;
+  padding-left: 15px;
+  position: absolute;
+  right: 18px;
+  top: 0;
+}
+
+.action-pill {
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-pill { background-color: #387ed1; color: #ffffff; }
+.buy-pill:hover { background-color: #2463b0; }
+.sell-pill { background-color: #ff5722; color: #ffffff; }
+.sell-pill:hover { background-color: #e44513; }
+.technical-pill { background-color: transparent; color: #666666; padding: 0 6px; border: 1px solid #e0e0e0; }
+.technical-pill:hover { background-color: #eeeeee; }
+
+.watchlist-chart-wrapper-pane {
+  height: 310px;
+  min-height: 310px;
+  max-height: 310px;
+  border-top: 1px solid #f1f1f1;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.trend-up { color: #4caf50 !important; }
+.trend-down { color: #ff5722 !important; }

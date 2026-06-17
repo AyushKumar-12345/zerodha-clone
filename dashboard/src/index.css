@@ -1,0 +1,331 @@
+/* ==========================================================================
+   1. GLOBAL SYSTEM DEFAULTS & BASE CORE
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #444444;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ==========================================================================
+   2. CENTRAL DASHBOARD STRUCTURE PANEL ENGINE (KITE SHELL MATRIX)
+   ========================================================================== */
+.dashboard-container {
+  width: 100%;
+  height: calc(100vh - 60px); 
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.watchlist-container {
+  width: 350px; /* Synchronized to standard static panel sizing grids */
+  min-width: 350px;
+  max-width: 350px;
+  height: 100%; 
+  box-sizing: border-box;
+  border-right: 1px solid #eeeeee;
+  display: flex;
+  flex-direction: column; 
+  background-color: #ffffff;
+  overflow: hidden; 
+  position: relative;
+}
+
+.content-pane {
+  flex: 1;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 40px 50px;
+  height: 100%;
+}
+
+/* ==========================================================================
+   3. NAVIGATION HEADER MASTER BAR
+   ========================================================================== */
+.topbar-container {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 150;
+}
+
+.indices-container {
+  width: 350px; /* Locked down configuration matches watchlist boundaries exactly */
+  min-width: 350px;
+  max-width: 350px;
+  height: 100%;
+  padding: 0 24px;
+  border-right: 1px solid #eeeeee;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.index-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: default;
+  height: 100%;
+}
+
+.index-name {
+  color: #555555;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin: 0;
+  line-height: 1;
+}
+
+.index-value {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.index-change {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.index-change.up { color: #4caf50 !important; }
+.index-change.down { color: #ff5722 !important; }
+
+.menu-container {
+  flex: 1; 
+  height: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap; /* Defends menu bar layout against text wrap overflow breaking */
+}
+
+/* ==========================================================================
+   4. SYSTEM INTERACTION ELEMENTS & SEARCH
+   ========================================================================== */
+.search-box-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  padding: 18px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444444; 
+  border-bottom: 1px solid #f5f5f5;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.search-input:focus {
+  outline: none;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.stock-counter {
+  position: absolute;
+  right: 20px;
+  font-size: 12px;
+  color: #999999;
+}
+
+/* ==========================================================================
+   5. REAL-TIME WATCHLIST INTERACTION SYSTEMS
+   ========================================================================== */
+.watchlist-items-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1; 
+  overflow-y: auto; 
+}
+
+.watchlist-li-item {
+  border-bottom: 1px solid #f8f8f8;
+  padding: 0;
+  height: 50px;
+  position: relative;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+}
+
+.watchlist-li-item:hover {
+  background-color: #fbfbfb;
+}
+
+.stock-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #444444;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.market-pricing-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trend-up { color: #4caf50 !important; }
+.trend-down { color: #ff5722 !important; }
+
+.live-spot-price {
+  font-weight: 500;
+  color: #444444;
+  margin-left: 4px;
+}
+
+.action-buttons-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  display: none;
+  background: #fbfbfb;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.watchlist-li-item:hover .action-buttons-overlay {
+  display: flex;
+}
+
+.action-pill {
+  padding: 5px 10px;
+  min-width: 42px;
+  height: 28px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.buy-pill { background-color: #387ed1; color: #ffffff; }
+.buy-pill:hover { background-color: #2463b0; }
+.sell-pill { background-color: #ff5722; color: #ffffff; }
+.sell-pill:hover { background-color: #e04f1e; }
+.technical-pill { background-color: #ffffff; border: 1px solid #cccccc; color: #555555; }
+.technical-pill:hover { background-color: #eeeeee; }
+
+.watchlist-number {
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eeeeee;
+  background: #ffffff;
+  z-index: 5;
+}
+
+.watchlist-number ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.watchlist-number ul li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  border-right: 1px solid #eeeeee;
+  height: 100%;
+  transition: all 0.1s ease;
+}
+
+.watchlist-number ul li:last-child { border-right: none; }
+.watchlist-number ul li:hover { color: #ff5722; cursor: pointer; background: #fbfbfb; }
+
+/* ==========================================================================
+   6. NAVIGATION LINK TABS & AVATAR PROFILE
+   ========================================================================== */
+.menus ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menus li {
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.menu {
+  font-size: 13px;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.menu:hover, .menu.selected { color: #ff5722; }
+
+.profile { display: flex; align-items: center; cursor: pointer; }
+
+.profile .avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fce5fc;
+  color: #df8bdf;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.profile .username {
+  font-size: 13px;
+  color: #666666;
+  transition: color 0.1s ease;
+}
+
+.profile:hover .username { color: #ff5722; }
