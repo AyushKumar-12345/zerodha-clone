@@ -17,7 +17,7 @@ const Funds = () => {
     if (isNaN(amt) || amt <= 0) return;
 
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("http://https://zerodha-clone-tbrh.onrender.com/newOrder", {
         name: "CASH DEPOSIT",
         qty: 1,
         price: amt,
@@ -49,7 +49,7 @@ const Funds = () => {
     }
 
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("http://https://zerodha-clone-tbrh.onrender.com/newOrder", {
         name: "CASH WITHDRAWAL",
         qty: 1,
         price: amt,

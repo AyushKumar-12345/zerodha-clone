@@ -19,7 +19,7 @@ const Menu = () => {
 
     const fetchDropdownMetrics = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/allOrders?user=${currentUsername}`);
+        const response = await axios.get(`http://https://zerodha-clone-tbrh.onrender.com/allOrders?user=${currentUsername}`);
         setOrderCount(response.data ? response.data.length : 0);
       } catch (error) {
         console.error("Menu indicator sync warning:", error);

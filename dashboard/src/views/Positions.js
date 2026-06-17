@@ -14,7 +14,7 @@ const Positions = () => {
 
   const fetchPositions = async () => {
     try {
-      const response = await axios.get(`http://localhost:3002/allOrders?user=${activeUser}`);
+      const response = await axios.get(`http://https://zerodha-clone-tbrh.onrender.com/allOrders?user=${activeUser}`);
       setOrders(response.data || []);
     } catch (error) {
       console.error("Failed loading positions data:", error);
@@ -69,7 +69,7 @@ const Positions = () => {
     const squareOffMarketPrice = livePrices[position.name] || positionAvgPrice || 100;
 
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("http://https://zerodha-clone-tbrh.onrender.com/newOrder", {
         name: position.name,
         qty: absoluteQty,
         price: squareOffMarketPrice,
