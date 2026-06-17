@@ -32,7 +32,7 @@ const TopBar = () => {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.assign("http://localhost:3000"); 
+    window.location.assign("https://zerodha-frontend-dmqe.onrender.com");; 
   };
 
   return (

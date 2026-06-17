@@ -74,7 +74,7 @@ const DashboardContent = () => {
         <div style={{ textAlign: "center", maxWidth: "420px", padding: "24px" }}>
           <h2 style={{ color: "#444444", marginBottom: "12px", fontWeight: "500" }}>Session Expired</h2>
           <button 
-            onClick={() => window.location.assign("http://localhost:3000/login")}
+            onClick={() => window.location.assign("https://zerodha-frontend-dmqe.onrender.com")}
             style={{ padding: "10px 24px", backgroundColor: "#387ed1", color: "#ffffff", border: "none", borderRadius: "4px", cursor: "pointer" }}
           >
             Go to Login Portal

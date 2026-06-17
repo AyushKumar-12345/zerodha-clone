@@ -35,7 +35,7 @@ const Menu = () => {
   const handleLogout = () => {
     localStorage.clear();
     alert("Session ended. Securely logging out...");
-    window.location.assign("http://localhost:3000");
+    window.location.assign("https://zerodha-frontend-dmqe.onrender.com");
   };
 
   return (
