@@ -8,14 +8,12 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    if (username.trim()) {
-      // FIX: Pass the username securely through a URL query parameter 
-      // to cross the browser's port isolation boundary!
-      const cleanUser = encodeURIComponent(username.trim());
-      window.location.assign(`http://localhost:3001/?loginUser=${cleanUser}`);
+  if (username.trim()) {
+    const cleanUser = encodeURIComponent(username.trim());
+    window.location.assign(`https://zerodha-dashboard-l3r5.onrender.com/?loginUser=${cleanUser}`);
     } else {
-      window.location.assign("http://localhost:3001");
-    }
+    window.location.assign("https://zerodha-dashboard-l3r5.onrender.com");
+  }
   };
 
   return (
